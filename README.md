@@ -15,22 +15,22 @@
 Tips: 推荐使用 Python 3.10+ 版本构建运行。
 
 0. 安装 Python 及依赖库：
-```
+```shell
 $ choco install python
 $ pip install selenium
 $ pip install requests
 $ pip install lxml
 ```
 1. 打开终端，运行：
-```
+```shell
 $ git clone https://github.com/yzxoi/Automatic-Submitter-for-HUSTOJ.git
 ```
 2. 修改 main.py 内的配置文件:
-```
+```shell
 $ vi Automatic-Submitter-for-HUSTOJ/main.py
 ```
 3. 运行 main.py：
-```
+```shell
 $ python main.py
 ```
 
@@ -38,12 +38,12 @@ $ python main.py
 
 1. 填写 HUSTOJ 网址 URL。
 2. 填写主账号提交者 MAIN_SUBMITTER。该账号应含有**某一种语言**所有**正确**提交记录。
-3. 填写提交语言 LANGUAGE。（对应代码表见附录）
+3. 填写提交语言 LANGUAGE。（对应代码表见[附录](#%E9%99%84%E5%BD%95)）
 4. 填写子账号(bot 账号) USER_ID。
 5. 填写子账号(bot 账号) PASSWORD。
 6. 填写主账号 Cookie：替换 `<cookie>`。
 
-```
+```python
 URL = "http://syzoj.hustoj.com/"
 MAIN_SUBMITTER = "std"
 LANGUAGE = "6"
