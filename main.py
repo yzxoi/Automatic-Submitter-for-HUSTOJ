@@ -9,7 +9,7 @@ URL = "http://syzoj.hustoj.com/"
 MAIN_SUBMITTER = "std"
 LANGUAGE = "6"
 USER_ID = "spider"
-PASSWORD = "spider123456"
+PASSWORD = "spider"
 
 headers = {
 	"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36",
@@ -39,6 +39,21 @@ def main():
 
 	for i in probs:
 		vis[i] = 0
+
+	url = URL + "status.php?problem_id=&user_id=" + USER_ID + "&language=-1&jresult=4"
+	driver.get(url)
+	time.sleep(1)
+	text = driver.page_source
+	html = etree.HTML(text)
+	done_probs = html.xpath('//*[@id="result-tab"]/tbody/tr/td[4]/b/div/a/text()')
+	for i in done_probs:
+		vis[i] = 1
+	print("已经完成的题目：",end='')
+	print(done_probs)
+	print("未完成的题目：",end='')
+	print(list(filter(lambda x: vis[x] == 0, probs)))
+	print("未完成的题目数量：",end='')
+	print(len(list(filter(lambda x: vis[x] == 0, probs))))
 
 	cnt = 0
 	for link in links:
@@ -70,7 +85,7 @@ def main():
 			driver.execute_script(stri)
 			time.sleep(1)
 			driver.find_element(By.ID,"Submit").click()
-			time.sleep(10)
+			time.sleep(8)
 		cnt = cnt + 1
 		print("cur progress: " + str(cnt) + "/" + str(len(links)))
 

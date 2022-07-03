@@ -9,6 +9,7 @@
 - **自动化** - 使用 Selenium with Python 实现自动化交题
 - **同步化** - 支持自动爬取大号提交记录以提交至小号
 - **定制化** - 支持自定义选择题目提交
+- **连续化** - 支持避免提交已经通过的题
 
 ## 开始
 
@@ -21,6 +22,9 @@ $ pip install selenium
 $ pip install requests
 $ pip install lxml
 ```
+
+下载符合自己浏览器版本的 [chromedriver](https://chromedriver.chromium.org/downloads)，并加入 PATH 路径。
+
 1. 打开终端，运行：
 ```shell
 $ git clone https://github.com/yzxoi/Automatic-Submitter-for-HUSTOJ.git
@@ -64,9 +68,9 @@ headers = {
 document.cookie
 ```
 
-其所返回的 `PHPSESSID=qwertyuiop` 即为 cookie。
+其所返回的字符串即为 cookie。
 
-注意当运行本程序时要确保主账号处于登录状态。
+**注意当运行本程序时要确保主账号处于登录状态。**
 
 ## 附录
 
