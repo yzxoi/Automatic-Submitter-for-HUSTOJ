@@ -46,6 +46,7 @@ $ python main.py
 4. 填写子账号(bot 账号) USER_ID。
 5. 填写子账号(bot 账号) PASSWORD。
 6. 填写主账号 Cookie：替换 `<cookie>`。
+7. 子账号必须**至少提交一题**。
 
 ```python
 URL = "http://syzoj.hustoj.com/"
